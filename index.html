@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tugas</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style type="text/css">
+        button {
+            height: 200px;
+            width: 200px;
+        }
+        img {
+            height: 180px;
+            width: 180px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Drum Kit</h1>
+        <button id="hihat"><img src="hihat.jpg">A</button>
+        <button id="snare"><img src="snare.jpg">S</button>
+        <button id="kick"><img src="kick.jpg">D</button>
+        <button id="crash"><img src="crash.jpg">J</button>
+        <button id="tom"><img src="tom.jpg">K</button>
+        <button id="floortom"><img src="floortom.jpg">L</button>
+    </center>
+
+    <script>
+        // Fungsi untuk klik tombol
+        $('#hihat').click(function() {
+            var hihat = new Audio('hihat.mp3');
+            hihat.play();
+        });
+        $('#crash').click(function() {
+            var crash = new Audio('crash.mp3');
+            crash.play();
+        });
+        $('#floortom').click(function() {
+            var floortom = new Audio('/floortom.mp3');
+            floortom.play();
+        });
+        $('#kick').click(function() {
+            var kick = new Audio('kick.mp3');
+            kick.play();
+        });
+        $('#snare').click(function() {
+            var snare = new Audio('snare.mp3');
+            snare.play();
+        });
+        $('#tom').click(function() {
+            var tom = new Audio('tom.mp3');
+            tom.play();
+        });
+
+        // Fungsi untuk input keyboard
+        $(document).keydown(function(event) {
+            if (event.key === 'a' || event.key === 'A') {
+                var hihat = new Audio('hihat.mp3');
+                hihat.play();
+            }
+            // Tambahkan tombol lain jika diinginkan, misalnya:
+            else if (event.key === 's' || event.key === 'S') {
+                var snare = new Audio('snare.mp3');
+                snare.play();
+            }
+            else if (event.key === 'd' || event.key === 'D') {
+                var kick = new Audio('kick.mp3');
+                kick.play();
+            }
+            else if (event.key === 'J' || event.key === 'j') {
+                var crash = new Audio('crash.mp3');
+                crash.play();
+            }
+            else if (event.key === 'K' || event.key === 'k') {
+                var tom = new Audio('tom.mp3');
+                tom.play();
+            }
+            else if (event.key === 'L' || event.key === 'l') {
+                var floortom = new Audio('floortom.mp3');
+                floortom.play();
+            }
+        });
+    </script>
+</body>
+</html>
